@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お知らせ - 清和社寺合同会社</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1A1A1A',
+            secondary: '#223A70'
+          },
+          borderRadius: {
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.tailwindcss.com/3.4.16" rel="stylesheet">
+</head>
+<body class="bg-white">
+<header class="border-b ink-border bg-gradient-to-r from-white/95 via-gray-50 to-white/90 washi-texture shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <span class="border-l-4 border-primary h-8 mr-4"></span>
+        <a href="index.html" class="brush-font text-2xl text-primary tracking-widest drop-shadow-sm">清和社寺合同会社</a>
+      </div>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          ホーム
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="company.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          会社概要
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="services.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          サービス
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="work.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          施工実績
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="news.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          お知らせ
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="contact.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          お問い合わせ
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden w-8 h-8 flex items-center justify-center">
+        <i class="ri-menu-line text-primary text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-nav" class="hidden md:hidden bg-gradient-to-r from-white/95 via-gray-50 to-white/90 washi-texture shadow-lg absolute top-full left-0 w-full border-b ink-border">
+      <nav class="flex flex-col items-center space-y-4 py-8">
+        <a href="index.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">ホーム</a>
+        <a href="company.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">会社概要</a>
+        <a href="services.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">サービス</a>
+        <a href="work.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">施工実績</a>
+        <a href="news.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">お知らせ</a>
+        <a href="contact.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">お問い合わせ</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="max-w-3xl mx-auto px-6 py-16">
+    <h1 class="brush-font text-4xl text-primary text-center mb-10">お知らせ</h1>
+    <p class="text-gray-700 text-center mb-12">清和社寺合同会社からの最新のお知らせや、施工実績、イベント情報などを掲載しています。</p>
+    <div class="space-y-10">
+      <!-- NEWS 1 -->
+      <article class="washi-texture bg-white p-6 shadow-washi !rounded-md border-l-4 border-primary">
+        <div class="flex items-center mb-2">
+          <span class="text-primary font-bold mr-4">2025/07/01</span>
+          <span class="text-xs bg-primary text-white px-2 py-1 !rounded">新着</span>
+        </div>
+        <h2 class="text-xl font-semibold text-primary mb-2">夏季休業のお知らせ</h2>
+        <p class="text-gray-700">誠に勝手ながら、2025年8月10日〜8月16日まで夏季休業とさせていただきます。期間中のお問い合わせは8月17日以降、順次ご対応いたします。ご不便をおかけしますが、何卒ご理解のほどお願い申し上げます。</p>
+      </article>
+      <!-- NEWS 2 -->
+      <article class="washi-texture bg-white p-6 shadow-washi !rounded-md border-l-4 border-secondary">
+        <div class="flex items-center mb-2">
+          <span class="text-primary font-bold mr-4">2025/06/20</span>
+          <span class="text-xs bg-secondary text-white px-2 py-1 !rounded">施工実績</span>
+        </div>
+        <h2 class="text-xl font-semibold text-primary mb-2">奈良市 某寺院本堂 修繕工事が完了しました</h2>
+        <p class="text-gray-700">奈良市内の寺院本堂にて屋根・外壁の修繕工事を無事に完了いたしました。伝統技法を活かした施工にご満足いただき、施主様より感謝のお言葉を頂戴しました。ご依頼ありがとうございました。</p>
+      </article>
+      <!-- NEWS 3 -->
+      <article class="washi-texture bg-white p-6 shadow-washi !rounded-md border-l-4 border-primary">
+        <div class="flex items-center mb-2">
+          <span class="text-primary font-bold mr-4">2025/05/30</span>
+          <span class="text-xs bg-primary text-white px-2 py-1 !rounded">メディア掲載</span>
+        </div>
+        <h2 class="text-xl font-semibold text-primary mb-2">「奈良の匠たち」に弊社の取り組みが紹介されました</h2>
+        <p class="text-gray-700">地域情報誌「奈良の匠たち」2025年6月号にて、弊社の社寺建築・修繕の取り組みと職人の声が紹介されました。ぜひご覧ください。</p>
+      </article>
+    </div>
+  </section>
+</main>
+<script>
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const mobileNav = document.getElementById('mobile-nav');
+  let menuOpen = false;
+  menuBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileNav.classList.toggle('hidden', !menuOpen);
+    menuBtn.innerHTML = menuOpen
+      ? '<i class="ri-close-line text-2xl text-primary"></i>'
+      : '<i class="ri-menu-line text-2xl text-primary"></i>';
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      mobileNav.classList.add('hidden');
+      menuBtn.innerHTML = '<i class="ri-menu-line text-2xl text-primary"></i>';
+      menuOpen = false;
+    }
+  });
+</script>
+</body>
+</html>

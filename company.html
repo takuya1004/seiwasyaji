@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社概要 - 清和社寺合同会社</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1A1A1A',
+            secondary: '#223A70'
+          },
+          borderRadius: {
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :where([class^="ri-"])::before {
+      content: "\f3c2";
+    }
+    body {
+      font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro", "Hiragino Mincho ProN", "Hiragino Serif", serif;
+      background: linear-gradient(45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(250,250,250,0.15) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(250,250,250,0.15) 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+    .washi-texture {
+      position: relative;
+    }
+    .washi-texture::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(120,120,120,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(120,120,120,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120,120,120,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .brush-font {
+      font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", serif;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+    .ink-border {
+      border-color: #1A1A1A;
+      border-width: 1px;
+    }
+    .shadow-washi {
+      box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08), 0 1px 3px rgba(26, 26, 26, 0.1);
+    }
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.4) 100%);
+    }
+    .timeline-line {
+      position: relative;
+    }
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #1A1A1A, rgba(26, 26, 26, 0.3));
+    }
+    .timeline-dot {
+      position: relative;
+      z-index: 10;
+      background: white;
+      border: 3px solid #1A1A1A;
+    }
+  </style>
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+body {
+font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro", "Hiragino Mincho ProN", "Hiragino Serif", serif;
+background: linear-gradient(45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+linear-gradient(-45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+linear-gradient(45deg, transparent 75%, rgba(250,250,250,0.15) 75%),
+linear-gradient(-45deg, transparent 75%, rgba(250,250,250,0.15) 75%);
+background-size: 20px 20px;
+background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+.washi-texture {
+position: relative;
+}
+.washi-texture::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: radial-gradient(circle at 20% 80%, rgba(120,120,120,0.1) 0%, transparent 50%),
+radial-gradient(circle at 80% 20%, rgba(120,120,120,0.1) 0%, transparent 50%),
+radial-gradient(circle at 40% 40%, rgba(120,120,120,0.05) 0%, transparent 50%);
+pointer-events: none;
+}
+.brush-font {
+font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", serif;
+font-weight: 700;
+letter-spacing: 0.1em;
+}
+.ink-border {
+border-color: #1A1A1A;
+border-width: 1px;
+}
+.shadow-washi {
+box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08), 0 1px 3px rgba(26, 26, 26, 0.1);
+}
+.hero-overlay {
+background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.4) 100%);
+}
+.timeline-line {
+position: relative;
+}
+.timeline-line::before {
+content: '';
+position: absolute;
+left: 1.5rem;
+top: 0;
+bottom: 0;
+width: 2px;
+background: linear-gradient(to bottom, #1A1A1A, rgba(26, 26, 26, 0.3));
+}
+.timeline-dot {
+position: relative;
+z-index: 10;
+background: white;
+border: 3px solid #1A1A1A;
+}
+</style>
+</head>
+<body class="bg-white">
+<header class="border-b ink-border bg-gradient-to-r from-white/95 via-gray-50 to-white/90 washi-texture shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <span class="border-l-4 border-primary h-8 mr-4"></span>
+        <a href="index.html" class="brush-font text-2xl text-primary tracking-widest drop-shadow-sm">清和社寺合同会社</a>
+      </div>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          ホーム
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="company.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          会社概要
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="services.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          サービス
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="work.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          施工実績
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="news.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          お知らせ
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="contact.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          お問い合わせ
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden w-8 h-8 flex items-center justify-center">
+        <i class="ri-menu-line text-primary text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-nav" class="hidden md:hidden bg-gradient-to-r from-white/95 via-gray-50 to-white/90 washi-texture shadow-lg absolute top-full left-0 w-full border-b ink-border">
+      <nav class="flex flex-col items-center space-y-4 py-8">
+        <a href="index.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">ホーム</a>
+        <a href="company.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">会社概要</a>
+        <a href="services.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">サービス</a>
+        <a href="work.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">施工実績</a>
+        <a href="news.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">お知らせ</a>
+        <a href="contact.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">お問い合わせ</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main>
+<section class="relative h-96 flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20temple%20entrance%20with%20elegant%20wooden%20gates%2C%20stone%20lanterns%20lining%20the%20pathway%2C%20peaceful%20morning%20atmosphere%2C%20ancient%20architecture%20details%2C%20cultural%20heritage%20building%2C%20serene%20environment%2C%20professional%20photography%2C%20warm%20natural%20lighting%2C%20traditional%20craftsmanship%2C%20sacred%20space%20entrance&width=1920&height=600&seq=about_hero&orientation=landscape"
+alt="会社概要"
+class="w-full h-full object-cover object-center">
+<div class="hero-overlay absolute inset-0"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+<h1 class="brush-font text-5xl md:text-6xl mb-4">会社概要</h1>
+<p class="text-xl md:text-2xl opacity-90">
+伝統を継承し、未来へ繋ぐ建築のプロフェッショナル
+</p>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="brush-font text-4xl text-primary mb-8">代表挨拶</h2>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md border-2 border-white">
+<p class="text-lg text-gray-700 leading-relaxed mb-8">
+私たち清和社寺合同会社は、奈良の地で社寺建築に携わって20年余り、先人から受け継いだ伝統技術を大切に守りながら、現代のニーズに応える建築を手がけてまいりました。
+</p>
+<p class="text-lg text-gray-700 leading-relaxed mb-8">
+宮大工として培った技術は、単なる建築技術ではありません。それは日本の文化そのものであり、職人の魂が込められた芸術作品でもあります。私たちは、この貴重な技術を次世代に継承していくことを使命として、日々精進しております。
+</p>
+<p class="text-lg text-gray-700 leading-relaxed mb-8">
+お客様一人ひとりのご要望に真摯に向き合い、伝統と革新を融合させた最高品質の建築をお届けすることをお約束いたします。
+</p>
+<div class="flex items-center space-x-4">
+<div class="text-right">
+<p class="brush-font text-xl text-primary">代表取締役</p>
+<p class="brush-font text-2xl text-primary mt-2">前田 清</p>
+</div>
+</div>
+</div>
+</div>
+<div class="washi-texture">
+<img src="https://readdy.ai/api/search-image?query=Professional%20Japanese%20master%20carpenter%20in%20traditional%20work%20clothes%2C%20middle-aged%20man%20with%20confident%20expression%2C%20standing%20in%20traditional%20workshop%20with%20wooden%20tools%2C%20natural%20lighting%2C%20cultural%20craftsmanship%2C%20professional%20portrait%2C%20authentic%20atmosphere%2C%20traditional%20Japanese%20artisan%2C%20heritage%20preservation&width=600&height=700&seq=president_portrait&orientation=portrait"
+alt="代表取締役 田中清和"
+class="w-full h-96 lg:h-full object-cover object-top !rounded border-2 border-white shadow-washi">
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="brush-font text-4xl text-primary mb-6">企業理念・経営方針</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+私たちが大切にしている理念と、未来に向けた経営方針をご紹介いたします。
+</p>
+</div>
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md border-2 border-white text-center">
+<div class="w-20 h-20 flex items-center justify-center mb-6 bg-primary/5 !rounded-full mx-auto">
+<i class="ri-heart-line text-3xl text-primary"></i>
+</div>
+<h3 class="brush-font text-2xl text-primary mb-4">企業理念</h3>
+<p class="text-gray-700 leading-relaxed">
+伝統を継承し、未来へ繋ぐ。<br>
+日本の美しい建築文化を次世代に伝え、現代に活かすことで、豊かな住環境と文化の発展に貢献します。
+</p>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md border-2 border-white text-center">
+<div class="w-20 h-20 flex items-center justify-center mb-6 bg-primary/5 !rounded-full mx-auto">
+<i class="ri-eye-line text-3xl text-primary"></i>
+</div>
+<h3 class="brush-font text-2xl text-primary mb-4">ビジョン</h3>
+<p class="text-gray-700 leading-relaxed">
+関西圏における伝統建築のリーディングカンパニーとして、技術革新と人材育成を通じて、持続可能な建築文化の発展を目指します。
+</p>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md border-2 border-white text-center">
+<div class="w-20 h-20 flex items-center justify-center mb-6 bg-primary/5 !rounded-full mx-auto">
+<i class="ri-compass-line text-3xl text-primary"></i>
+</div>
+<h3 class="brush-font text-2xl text-primary mb-4">ミッション</h3>
+<p class="text-gray-700 leading-relaxed">
+お客様の想いを形にし、100年先まで愛される建築を創造する。品質・安全・環境に配慮した施工で社会に貢献します。
+</p>
+</div>
+</div>
+<div class="mt-16 washi-texture bg-white p-8 shadow-washi !rounded-md border-2 border-white">
+<h3 class="brush-font text-2xl text-primary mb-8 text-center">行動指針</h3>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary text-white !rounded-full mt-1">
+<span class="text-sm font-bold">1</span>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-2">品質第一</h4>
+<p class="text-gray-700 leading-relaxed">妥協のない品質管理と継続的な技術向上により、お客様の期待を超える建築を提供します。</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary text-white !rounded-full mt-1">
+<span class="text-sm font-bold">2</span>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-2">安全最優先</h4>
+<p class="text-gray-700 leading-relaxed">作業員とお客様の安全を最優先に考え、事故ゼロを目指した現場運営を徹底します。</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary text-white !rounded-full mt-1">
+<span class="text-sm font-bold">3</span>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-2">技術継承</h4>
+<p class="text-gray-700 leading-relaxed">伝統技術の保存と継承に努め、次世代の職人育成に積極的に取り組みます。</p>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary text-white !rounded-full mt-1">
+<span class="text-sm font-bold">4</span>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-2">環境配慮</h4>
+<p class="text-gray-700 leading-relaxed">自然素材の活用と環境負荷の軽減により、持続可能な建築を実現します。</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary text-white !rounded-full mt-1">
+<span class="text-sm font-bold">5</span>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-2">地域貢献</h4>
+<p class="text-gray-700 leading-relaxed">地域の文化財保護と建築文化の発展に貢献し、地域社会との共生を図ります。</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary text-white !rounded-full mt-1">
+<span class="text-sm font-bold">6</span>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-2">革新追求</h4>
+<p class="text-gray-700 leading-relaxed">伝統を基盤としながらも、新しい技術や手法の導入により、常に進化し続けます。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50/30">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="brush-font text-4xl text-primary mb-6">会社沿革</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+創業から現在まで、伝統技術の継承と革新に取り組んできた歩みをご紹介いたします。
+</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="timeline-line space-y-12">
+<div class="flex items-start space-x-8">
+<div class="timeline-dot w-12 h-12 !rounded-full flex items-center justify-center">
+<span class="brush-font text-primary font-bold">創</span>
+</div>
+<div class="flex-1 washi-texture bg-white p-6 shadow-washi !rounded-md border-2 border-white">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+<h3 class="brush-font text-xl text-primary">会社設立</h3>
+<span class="text-secondary font-semibold">平成15年（2003年）4月</span>
+</div>
+<p class="text-gray-700 leading-relaxed">
+奈良県奈良市にて清和社寺合同会社を設立。代表取締役田中清和が宮大工として培った技術を基に、社寺建築専門の建設会社としてスタート。
+</p>
+</div>
+</div>
+<div class="flex items-start space-x-8">
+<div class="timeline-dot w-12 h-12 !rounded-full flex items-center justify-center">
+<span class="brush-font text-primary font-bold">許</span>
+</div>
+<div class="flex-1 washi-texture bg-white p-6 shadow-washi !rounded-md border-2 border-white">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+<h3 class="brush-font text-xl text-primary">建設業許可取得</h3>
+<span class="text-secondary font-semibold">平成16年（2004年）3月</span>
+</div>
+<p class="text-gray-700 leading-relaxed">
+奈良県知事より建設業許可（般-4）第12345号を取得。一級建築士事務所としても登録し、設計から施工まで一貫したサービス提供体制を確立。
+</p>
+</div>
+</div>
+<div class="flex items-start space-x-8">
+<div class="timeline-dot w-12 h-12 !rounded-full flex items-center justify-center">
+<span class="brush-font text-primary font-bold">拡</span>
+</div>
+<div class="flex-1 washi-texture bg-white p-6 shadow-washi !rounded-md border-2 border-white">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+<h3 class="brush-font text-xl text-primary">事業拡大</h3>
+<span class="text-secondary font-semibold">平成20年（2008年）</span>
+</div>
+<p class="text-gray-700 leading-relaxed">
+社寺建築に加え、一般住宅への伝統工法適用サービスを開始。庭園・造園設計部門を新設し、総合的な和風建築サービスを提供開始。
+</p>
+</div>
+</div>
+<div class="flex items-start space-x-8">
+<div class="timeline-dot w-12 h-12 !rounded-full flex items-center justify-center">
+<span class="brush-font text-primary font-bold">文</span>
+</div>
+<div class="flex-1 washi-texture bg-white p-6 shadow-washi !rounded-md border-2 border-white">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+<h3 class="brush-font text-xl text-primary">文化財修復事業開始</h3>
+<span class="text-secondary font-semibold">平成25年（2013年）</span>
+</div>
+<p class="text-gray-700 leading-relaxed">
+文化財保護法に基づく修復工事の認定を取得。奈良県内の重要文化財修復プロジェクトに参画し、伝統技術の保存と継承に貢献。
+</p>
+</div>
+</div>
+<div class="flex items-start space-x-8">
+<div class="timeline-dot w-12 h-12 !rounded-full flex items-center justify-center">
+<span class="brush-font text-primary font-bold">技</span>
+</div>
+<div class="flex-1 washi-texture bg-white p-6 shadow-washi !rounded-md border-2 border-white">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+<h3 class="brush-font text-xl text-primary">技術継承プログラム開始</h3>
+<span class="text-secondary font-semibold">令和2年（2020年）</span>
+</div>
+<p class="text-gray-700 leading-relaxed">
+若手職人育成のための技術継承プログラムを開始。伝統技術の次世代継承と現代技術との融合を目指した人材育成に注力。
+</p>
+</div>
+</div>
+<div class="flex items-start space-x-8">
+<div class="timeline-dot w-12 h-12 !rounded-full flex items-center justify-center">
+<span class="brush-font text-primary font-bold">現</span>
+</div>
+<div class="flex-1 washi-texture bg-white p-6 shadow-washi !rounded-md border-2 border-white">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+<h3 class="brush-font text-xl text-primary">現在</h3>
+<span class="text-secondary font-semibold">令和6年（2024年）</span>
+</div>
+<p class="text-gray-700 leading-relaxed">
+創業20周年を迎え、従業員25名体制で関西圏を中心に事業展開。伝統技術の保存と革新的な建築の創造を両立させ、さらなる発展を目指す。
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="washi-texture bg-white p-12 shadow-washi !rounded-md border-2 border-white">
+<h3 class="brush-font text-3xl text-primary mb-10 text-center">会社情報</h3>
+<div class="max-w-3xl mx-auto space-y-6">
+<div class="flex items-center p-6 bg-primary/5 !rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 !rounded-full mr-6">
+<i class="ri-building-2-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-1">会社名</h4>
+<p class="text-gray-600">清和社寺合同会社</p>
+</div>
+</div>
+<div class="flex items-center p-6 bg-primary/5 !rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 !rounded-full mr-6">
+<i class="ri-calendar-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-1">設立</h4>
+<p class="text-gray-600">平成15年（2003年）4月</p>
+</div>
+</div>
+<div class="flex items-center p-6 bg-primary/5 !rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 !rounded-full mr-6">
+<i class="ri-money-dollar-circle-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-1">資本金</h4>
+<p class="text-gray-600">1,000万円</p>
+</div>
+</div>
+<div class="flex items-center p-6 bg-primary/5 !rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 !rounded-full mr-6">
+<i class="ri-group-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-1">従業員数</h4>
+<p class="text-gray-600">25名（2024年4月現在）</p>
+</div>
+</div>
+<div class="flex items-center p-6 bg-primary/5 !rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 !rounded-full mr-6">
+<i class="ri-briefcase-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-1">事業内容</h4>
+<p class="text-gray-600">社寺建築・修繕、伝統工法建築、庭園設計・施工、文化財修復</p>
+</div>
+</div>
+<div class="flex items-center p-6 bg-primary/5 !rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 !rounded-full mr-6">
+<i class="ri-map-2-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-1">営業エリア</h4>
+<p class="text-gray-600">奈良県、大阪府、京都府、兵庫県、和歌山県</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50/30">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="brush-font text-4xl text-primary mb-6">主要職人・技術者紹介</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+伝統技術を継承し、現代に活かす熟練の職人たちをご紹介いたします。
+</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white">
+<img src="https://readdy.ai/api/search-image?query=Experienced%20Japanese%20master%20carpenter%20in%20traditional%20work%20clothes%2C%20skilled%20craftsman%20with%20weathered%20hands%2C%20standing%20in%20wooden%20workshop%20with%20traditional%20tools%2C%20natural%20lighting%2C%20professional%20portrait%2C%20cultural%20heritage%2C%20authentic%20atmosphere%2C%20traditional%20Japanese%20artisan%2C%20master%20of%20craft&width=400&height=300&seq=craftsman_1&orientation=landscape"
+alt="山田宮大工"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="brush-font text-lg text-primary mb-2">山田 太郎</h3>
+<p class="text-secondary text-sm mb-3">宮大工棟梁 | 経験年数35年</p>
+<p class="text-gray-600 text-sm leading-relaxed mb-4">
+一級技能士（建築大工）、伝統建築工匠。法隆寺や東大寺の修復工事に携わった経験を持つ。継手・仕口の技術に精通し、若手職人の指導にも力を注ぐ。
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">一級技能士</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">伝統建築工匠</span>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white">
+<img src="https://readdy.ai/api/search-image?query=Professional%20Japanese%20architect%20woman%20in%20business%20attire%2C%20confident%20expression%2C%20standing%20in%20modern%20office%20with%20traditional%20architectural%20drawings%2C%20natural%20lighting%2C%20professional%20portrait%2C%20cultural%20bridge%20between%20tradition%20and%20modernity%2C%20architectural%20expertise%2C%20contemporary%20professional&width=400&height=300&seq=architect_1&orientation=landscape"
+alt="佐藤建築士"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="brush-font text-lg text-primary mb-2">佐藤 花子</h3>
+<p class="text-secondary text-sm mb-3">一級建築士 | 経験年数15年</p>
+<p class="text-gray-600 text-sm leading-relaxed mb-4">
+一級建築士、文化財建造物保存技術者。伝統建築の設計から現代建築への応用まで幅広く手がける。特に社寺建築の意匠設計を得意とする。
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">一級建築士</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">文化財保存技術者</span>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20garden%20designer%20middle-aged%20man%20in%20casual%20work%20clothes%2C%20standing%20in%20beautiful%20zen%20garden%20with%20stone%20arrangements%2C%20natural%20outdoor%20lighting%2C%20professional%20portrait%2C%20landscape%20expertise%2C%20cultural%20garden%20design%2C%20peaceful%20atmosphere%2C%20traditional%20landscaping&width=400&height=300&seq=garden_designer&orientation=landscape"
+alt="鈴木造園師"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="brush-font text-lg text-primary mb-2">鈴木 一郎</h3>
+<p class="text-secondary text-sm mb-3">造園技能士 | 経験年数20年</p>
+<p class="text-gray-600 text-sm leading-relaxed mb-4">
+一級造園技能士、樹木医。日本庭園の設計・施工を専門とし、石組みから植栽まで総合的な庭園づくりを手がける。文化財庭園の修復経験も豊富。
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">一級造園技能士</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">樹木医</span>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white">
+<img src="https://readdy.ai/api/search-image?query=Skilled%20Japanese%20plasterer%20craftsman%20in%20work%20clothes%2C%20traditional%20wall%20finishing%20specialist%2C%20standing%20in%20workshop%20with%20traditional%20tools%2C%20natural%20lighting%2C%20professional%20portrait%2C%20cultural%20craftsmanship%2C%20traditional%20building%20techniques%2C%20authentic%20atmosphere%2C%20master%20artisan&width=400&height=300&seq=plasterer&orientation=landscape"
+alt="田村左官"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="brush-font text-lg text-primary mb-2">田村 次郎</h3>
+<p class="text-secondary text-sm mb-3">左官職人 | 経験年数25年</p>
+<p class="text-gray-600 text-sm leading-relaxed mb-4">
+一級左官技能士。土壁や漆喰壁など、伝統的な壁仕上げ技術に精通。現代建築にも応用可能な高度な左官技術を持つ。
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">一級左官技能士</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">伝統壁仕上げ</span>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white">
+<img src="https://readdy.ai/api/search-image?query=Young%20Japanese%20carpenter%20apprentice%20in%20traditional%20work%20clothes%2C%20focused%20expression%20while%20working%20on%20wooden%20joinery%2C%20traditional%20workshop%20setting%2C%20natural%20lighting%2C%20professional%20portrait%2C%20next%20generation%20craftsman%2C%20cultural%20heritage%20continuation%2C%20learning%20traditional%20skills&width=400&height=300&seq=young_craftsman&orientation=landscape"
+alt="若手職人"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="brush-font text-lg text-primary mb-2">中村 健太</h3>
+<p class="text-secondary text-sm mb-3">宮大工 | 経験年数8年</p>
+<p class="text-gray-600 text-sm leading-relaxed mb-4">
+二級技能士（建築大工）。伝統技術の継承者として、ベテラン職人の指導の下で技術を磨く。現代技術との融合にも積極的に取り組む。
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">二級技能士</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">技術継承者</span>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white">
+<img src="https://readdy.ai/api/search-image?query=Professional%20Japanese%20project%20manager%20in%20business%20casual%20attire%2C%20confident%20expression%2C%20standing%20at%20construction%20site%20with%20traditional%20building%20in%20background%2C%20natural%20lighting%2C%20professional%20portrait%2C%20construction%20management%2C%20cultural%20building%20projects%2C%20leadership%20role&width=400&height=300&seq=manager&orientation=landscape"
+alt="工事監督"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="brush-font text-lg text-primary mb-2">高橋 雄一</h3>
+<p class="text-secondary text-sm mb-3">工事監督 | 経験年数18年</p>
+<p class="text-gray-600 text-sm leading-relaxed mb-4">
+一級建築施工管理技士、二級建築士。現場の安全管理から品質管理まで総合的に監督。伝統工法と現代工法の両方に精通している。
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">一級施工管理技士</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs !rounded">二級建築士</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="brush-font text-4xl text-primary mb-6">保有資格・許可証</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+高品質な建築サービスを提供するために必要な各種資格・許可を取得しております。
+</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md border-2 border-white">
+<h3 class="brush-font text-2xl text-primary mb-6 flex items-center">
+<i class="ri-award-line text-primary mr-3"></i>
+建設業許可・登録
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">建設業許可（般-4）</span>
+<span class="text-secondary font-semibold">第12345号</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">一級建築士事務所登録</span>
+<span class="text-secondary font-semibold">第A-6789号</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">文化財建造物保存技術者</span>
+<span class="text-secondary font-semibold">認定済</span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="text-gray-700">労働者派遣事業許可</span>
+<span class="text-secondary font-semibold">第29-123456号</span>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md border-2 border-white">
+<h3 class="brush-font text-2xl text-primary mb-6 flex items-center">
+<i class="ri-user-star-line text-primary mr-3"></i>
+技術者資格
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">一級建築士</span>
+<span class="text-secondary font-semibold">3名</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">二級建築士</span>
+<span class="text-secondary font-semibold">2名</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">一級建築施工管理技士</span>
+<span class="text-secondary font-semibold">2名</span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="text-gray-700">二級建築施工管理技士</span>
+<span class="text-secondary font-semibold">3名</span>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md border-2 border-white">
+<h3 class="brush-font text-2xl text-primary mb-6 flex items-center">
+<i class="ri-hammer-line text-primary mr-3"></i>
+技能士資格
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">一級技能士（建築大工）</span>
+<span class="text-secondary font-semibold">5名</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">二級技能士（建築大工）</span>
+<span class="text-secondary font-semibold">8名</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">一級造園技能士</span>
+<span class="text-secondary font-semibold">2名</span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="text-gray-700">一級左官技能士</span>
+<span class="text-secondary font-semibold">2名</span>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md border-2 border-white">
+<h3 class="brush-font text-2xl text-primary mb-6 flex items-center">
+<i class="ri-shield-check-line text-primary mr-3"></i>
+その他資格・認定
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">樹木医</span>
+<span class="text-secondary font-semibold">1名</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">伝統建築工匠</span>
+<span class="text-secondary font-semibold">認定済</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100">
+<span class="text-gray-700">ISO9001認証</span>
+<span class="text-secondary font-semibold">取得済</span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="text-gray-700">建設業労働安全衛生マネジメント</span>
+<span class="text-secondary font-semibold">認定済</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="bg-white">
+<div class="max-w-7xl mx-auto px-6 py-12">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<div class="brush-font text-xl text-primary mb-4">清和社寺合同会社</div>
+<p class="text-gray-600 text-sm leading-relaxed mb-4">
+奈良県を拠点とする社寺建築専門の建設会社。伝統技術を現代に活かし、格調高い建築をお届けします。
+</p>
+<div class="flex space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 !rounded-full hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+<i class="ri-facebook-line text-sm"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 !rounded-full hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+<i class="ri-twitter-line text-sm"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 !rounded-full hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+<i class="ri-instagram-line text-sm"></i>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-4">サービス</h3>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">社寺建築・修繕</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">伝統工法による建築</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">庭園・造園設計</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">文化財修復</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-4">会社情報</h3>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="text-secondary font-semibold">会社概要</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">代表挨拶</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">沿革</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">採用情報</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-4">お問い合わせ</h3>
+<div class="space-y-3 text-sm">
+<div class="flex items-center space-x-2 text-gray-600">
+<i class="ri-map-pin-line"></i>
+<span>奈良県奈良市春日野町160-1</span>
+</div>
+<div class="flex items-center space-x-2 text-gray-600">
+<i class="ri-phone-line"></i>
+<span>0742-12-3456</span>
+</div>
+<div class="flex items-center space-x-2 text-gray-600">
+<i class="ri-mail-line"></i>
+<span>info@seiwa-shaji.co.jp</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 text-center">
+<p class="text-gray-600 text-sm">
+© 2024 清和社寺合同会社. All rights reserved.
+</p>
+</div>
+</div>
+</footer>
+<button id="scrollToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white !rounded-full shadow-lg hover:bg-secondary transition-all duration-300 opacity-0 pointer-events-none z-50">
+<i class="ri-arrow-up-line"></i>
+</button>
+<script id="scroll-to-top">
+document.addEventListener('DOMContentLoaded', function() {
+const scrollToTopBtn = document.getElementById('scrollToTop');
+window.addEventListener('scroll', function() {
+if (window.pageYOffset > 300) {
+scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+scrollToTopBtn.classList.add('opacity-100');
+} else {
+scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+scrollToTopBtn.classList.remove('opacity-100');
+}
+});
+scrollToTopBtn.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+</script>
+<script id="mobile-menu">
+document.addEventListener('DOMContentLoaded', function() {
+const menuButton = document.querySelector('.md\\:hidden button');
+const nav = document.querySelector('nav');
+if (menuButton && nav) {
+menuButton.addEventListener('click', function() {
+nav.classList.toggle('hidden');
+nav.classList.toggle('flex');
+});
+}
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const mobileNav = document.getElementById('mobile-nav');
+  const icon = menuBtn.querySelector('i');
+  let open = false;
+
+  function openMenu() {
+    mobileNav.classList.remove('hidden');
+    mobileNav.style.opacity = 0;
+    mobileNav.style.transform = 'translateY(-16px)';
+    setTimeout(() => {
+      mobileNav.style.transition = 'opacity 0.3s, transform 0.3s';
+      mobileNav.style.opacity = 1;
+      mobileNav.style.transform = 'translateY(0)';
+    }, 10);
+    icon.classList.remove('ri-menu-line');
+    icon.classList.add('ri-close-line');
+    open = true;
+  }
+  function closeMenu() {
+    mobileNav.style.opacity = 0;
+    mobileNav.style.transform = 'translateY(-16px)';
+    setTimeout(() => {
+      mobileNav.classList.add('hidden');
+      mobileNav.style.transition = '';
+      mobileNav.style.transform = '';
+    }, 300);
+    icon.classList.remove('ri-close-line');
+    icon.classList.add('ri-menu-line');
+    open = false;
+  }
+  menuBtn.addEventListener('click', function() {
+    if (!open) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+  // 画面リサイズ時にメニューをリセット
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) {
+      mobileNav.classList.add('hidden');
+      icon.classList.remove('ri-close-line');
+      icon.classList.add('ri-menu-line');
+      open = false;
+      mobileNav.style.transition = '';
+      mobileNav.style.transform = '';
+      mobileNav.style.opacity = '';
+    }
+  });
+});
+</script>
+</body>
+</html>

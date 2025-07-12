@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施工実績 - 清和社寺合同会社</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1A1A1A',
+            secondary: '#223A70'
+          },
+          borderRadius: {
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :where([class^="ri-"])::before {
+      content: "\f3c2";
+    }
+    body {
+      font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro", "Hiragino Mincho ProN", "Hiragino Serif", serif;
+      background: linear-gradient(45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(250,250,250,0.15) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(250,250,250,0.15) 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+    .washi-texture {
+      position: relative;
+    }
+    .washi-texture::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(120,120,120,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(120,120,120,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120,120,120,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .brush-font {
+      font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", serif;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+    .ink-border {
+      border-color: #1A1A1A;
+      border-width: 1px;
+    }
+    .shadow-washi {
+      box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08), 0 1px 3px rgba(26, 26, 26, 0.1);
+    }
+    .filter-dropdown {
+      position: relative;
+    }
+    .filter-dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08);
+      z-index: 10;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .filter-option {
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .filter-option:hover {
+      background-color: #f9fafb;
+    }
+    .filter-option.selected {
+      background-color: #1A1A1A;
+      color: white;
+    }
+    .custom-checkbox {
+      appearance: none;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: 2px solid #d1d5db;
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .custom-checkbox:checked {
+      background-color: #1A1A1A;
+      border-color: #1A1A1A;
+    }
+    .custom-checkbox:checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  </style>
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+body {
+font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro", "Hiragino Mincho ProN", "Hiragino Serif", serif;
+background: linear-gradient(45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+linear-gradient(-45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+linear-gradient(45deg, transparent 75%, rgba(250,250,250,0.15) 75%),
+linear-gradient(-45deg, transparent 75%, rgba(250,250,250,0.15) 75%);
+background-size: 20px 20px;
+background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+.washi-texture {
+position: relative;
+}
+.washi-texture::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: radial-gradient(circle at 20% 80%, rgba(120,120,120,0.1) 0%, transparent 50%),
+radial-gradient(circle at 80% 20%, rgba(120,120,120,0.1) 0%, transparent 50%),
+radial-gradient(circle at 40% 40%, rgba(120,120,120,0.05) 0%, transparent 50%);
+pointer-events: none;
+}
+.brush-font {
+font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", serif;
+font-weight: 700;
+letter-spacing: 0.1em;
+}
+.ink-border {
+border-color: #1A1A1A;
+border-width: 1px;
+}
+.shadow-washi {
+box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08), 0 1px 3px rgba(26, 26, 26, 0.1);
+}
+.filter-dropdown {
+position: relative;
+}
+.filter-dropdown-content {
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: white;
+border: 1px solid #e5e7eb;
+border-radius: 8px;
+box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08);
+z-index: 10;
+max-height: 200px;
+overflow-y: auto;
+}
+.filter-option {
+padding: 0.75rem 1rem;
+cursor: pointer;
+transition: background-color 0.2s;
+}
+.filter-option:hover {
+background-color: #f9fafb;
+}
+.filter-option.selected {
+background-color: #1A1A1A;
+color: white;
+}
+.custom-checkbox {
+appearance: none;
+width: 1.25rem;
+height: 1.25rem;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+position: relative;
+cursor: pointer;
+transition: all 0.2s;
+}
+.custom-checkbox:checked {
+background-color: #1A1A1A;
+border-color: #1A1A1A;
+}
+.custom-checkbox:checked::after {
+content: '✓';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+font-size: 0.75rem;
+font-weight: bold;
+}
+</style>
+</head>
+<body class="bg-white">
+<header class="border-b ink-border bg-gradient-to-r from-white/95 via-gray-50 to-white/90 washi-texture shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <span class="border-l-4 border-primary h-8 mr-4"></span>
+        <a href="index.html" class="brush-font text-2xl text-primary tracking-widest drop-shadow-sm">清和社寺合同会社</a>
+      </div>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          ホーム
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="company.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          会社概要
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="services.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          サービス
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="work.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          施工実績
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="news.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          お知らせ
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="contact.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+          お問い合わせ
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden w-8 h-8 flex items-center justify-center">
+        <i class="ri-menu-line text-primary text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-nav" class="hidden md:hidden bg-gradient-to-r from-white/95 via-gray-50 to-white/90 washi-texture shadow-lg absolute top-full left-0 w-full border-b ink-border">
+      <nav class="flex flex-col items-center space-y-4 py-8">
+        <a href="index.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">ホーム</a>
+        <a href="company.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">会社概要</a>
+        <a href="services.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">サービス</a>
+        <a href="work.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">施工実績</a>
+        <a href="news.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">お知らせ</a>
+        <a href="contact.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">お問い合わせ</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main>
+<section class="py-12 bg-gray-50/30">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-8">
+<div class="flex items-center space-x-2 text-sm text-gray-600 mb-4">
+<a href="https://readdy.ai/home/27cb1366-005f-42e2-9712-6fd9c6a7ad4e/44282489-814e-4dfa-ac62-d21492b38f0e" data-readdy="true" class="hover:text-primary transition-colors duration-300">ホーム</a>
+<i class="ri-arrow-right-s-line"></i>
+<span class="text-primary">施工実績</span>
+</div>
+<h1 class="brush-font text-4xl text-primary mb-4">施工実績一覧</h1>
+<p class="text-lg text-gray-600 leading-relaxed">
+奈良県内外で計画した社寺建築・修繕プロジェクトの詳細をご覧いただけます。
+
+伝統技術と現代の要求を両立させ、格調高い仕上がりをご確認ください。
+</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white hover:border-gray-100 transition-all duration-300 project-card" data-type="修繕" data-region="奈良市" data-year="2023">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20shrine%20with%20beautiful%20curved%20rooflines%2C%20intricate%20wooden%20details%2C%20vermillion%20torii%20gate%2C%20stone%20lanterns%2C%20peaceful%20courtyard%20setting%2C%20professional%20architectural%20photography%2C%20golden%20hour%20lighting%2C%20cultural%20heritage%20building%2C%20pristine%20craftsmanship%2C%20sacred%20atmosphere&width=400&height=300&seq=project_shrine_1&orientation=landscape"
+alt="春日神社 本殿修繕"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center space-x-2 mb-3">
+<span class="px-3 py-1 text-xs bg-primary/10 text-primary !rounded-full">修繕</span>
+<span class="text-gray-500 text-sm">2023年完成</span>
+</div>
+<h3 class="brush-font text-lg text-primary mb-2">春日神社 本殿修繕</h3>
+<p class="text-gray-600 text-sm mb-3 flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+奈良市春日野町
+</p>
+<p class="text-gray-600 text-sm leading-relaxed">
+江戸時代から続く歴史ある神社の本殿を、伝統工法により丁寧に修繕。屋根の葺き替えから木部の補修まで、文化財としての価値を保持しながら耐久性を向上させました。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white hover:border-gray-100 transition-all duration-300 project-card" data-type="庭園設計" data-region="奈良市" data-year="2022">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20Buddhist%20temple%20with%20multi-story%20pagoda%2C%20elegant%20wooden%20architecture%2C%20peaceful%20temple%20grounds%2C%20stone%20pathways%2C%20ancient%20trees%2C%20morning%20mist%2C%20professional%20photography%2C%20serene%20atmosphere%2C%20cultural%20monument%2C%20traditional%20roofing%20tiles%2C%20spiritual%20sanctuary&width=400&height=300&seq=project_temple_1&orientation=landscape"
+alt="興福寺 五重塔周辺整備"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center space-x-2 mb-3">
+<span class="px-3 py-1 text-xs bg-secondary/10 text-secondary !rounded-full">庭園設計</span>
+<span class="text-gray-500 text-sm">2022年完成</span>
+</div>
+<h3 class="brush-font text-lg text-primary mb-2">興福寺 五重塔周辺整備</h3>
+<p class="text-gray-600 text-sm mb-3 flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+奈良市登大路町
+</p>
+<p class="text-gray-600 text-sm leading-relaxed">
+世界遺産に登録される興福寺の五重塔周辺の環境整備を担当。参拝者の安全性と景観の調和を重視し、伝統的な石組みと植栽により美しい空間を創出しました。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white hover:border-gray-100 transition-all duration-300 project-card" data-type="社寺建築" data-region="生駒市" data-year="2023">
+<img src="https://readdy.ai/api/search-image?query=Modern%20Japanese%20residential%20house%20with%20traditional%20elements%2C%20clean%20wooden%20facades%2C%20contemporary%20design%20with%20cultural%20influences%2C%20natural%20materials%2C%20minimalist%20garden%2C%20professional%20architectural%20photography%2C%20natural%20lighting%2C%20harmony%20between%20old%20and%20new%2C%20elegant%20simplicity&width=400&height=300&seq=project_residence_1&orientation=landscape"
+alt="伝統工法による住宅建築"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center space-x-2 mb-3">
+<span class="px-3 py-1 text-xs bg-primary/10 text-primary !rounded-full">社寺建築</span>
+<span class="text-gray-500 text-sm">2023年完成</span>
+</div>
+<h3 class="brush-font text-lg text-primary mb-2">伝統工法による住宅建築</h3>
+<p class="text-gray-600 text-sm mb-3 flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+生駒市東生駒
+</p>
+<p class="text-gray-600 text-sm leading-relaxed">
+現代住宅に伝統工法を取り入れた新築プロジェクト。継手・仕口による木組み構造と現代の住環境を両立させ、長期にわたって住み継がれる住まいを実現しました。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white hover:border-gray-100 transition-all duration-300 project-card" data-type="文化財修復" data-region="橿原市" data-year="2024">
+<img src="https://readdy.ai/api/search-image?query=Ancient%20Japanese%20temple%20restoration%20work%2C%20traditional%20wooden%20architecture%20being%20carefully%20repaired%2C%20skilled%20craftsmen%20working%20with%20traditional%20tools%2C%20detailed%20woodwork%20restoration%2C%20cultural%20heritage%20preservation%2C%20professional%20craftsmanship%2C%20natural%20wood%20materials%2C%20peaceful%20temple%20setting&width=400&height=300&seq=project_restoration_1&orientation=landscape"
+alt="橿原神宮 拝殿修復"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center space-x-2 mb-3">
+<span class="px-3 py-1 text-xs bg-green-100 text-green-800 !rounded-full">文化財修復</span>
+<span class="text-gray-500 text-sm">2024年完成</span>
+</div>
+<h3 class="brush-font text-lg text-primary mb-2">橿原神宮 拝殿修復</h3>
+<p class="text-gray-600 text-sm mb-3 flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+橿原市久米町
+</p>
+<p class="text-gray-600 text-sm leading-relaxed">
+明治時代に建立された橿原神宮の拝殿修復工事。経年劣化した木部の交換と塗装の塗り直しを行い、創建当時の美しさを取り戻しました。文化財としての価値を損なうことなく、現代の安全基準にも適合させています。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white hover:border-gray-100 transition-all duration-300 project-card" data-type="庭園設計" data-region="天理市" data-year="2023">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20zen%20garden%20with%20carefully%20arranged%20stones%2C%20moss%20covered%20ground%2C%20peaceful%20water%20features%2C%20bamboo%20elements%2C%20perfectly%20manicured%20plants%2C%20serene%20meditation%20space%2C%20natural%20harmony%2C%20soft%20filtered%20light%2C%20minimalist%20aesthetic%2C%20cultural%20landscape%20design&width=400&height=300&seq=project_garden_1&orientation=landscape"
+alt="天理教本部 庭園整備"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center space-x-2 mb-3">
+<span class="px-3 py-1 text-xs bg-secondary/10 text-secondary !rounded-full">庭園設計</span>
+<span class="text-gray-500 text-sm">2023年完成</span>
+</div>
+<h3 class="brush-font text-lg text-primary mb-2">天理教本部 庭園整備</h3>
+<p class="text-gray-600 text-sm mb-3 flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+天理市三島町
+</p>
+<p class="text-gray-600 text-sm leading-relaxed">
+天理教本部の庭園整備プロジェクト。枯山水の手法を用いた石庭の造成と、四季を通じて美しい景観を楽しめる植栽計画を実施。参拝者の心を癒やす静寂な空間を創出しました。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white hover:border-gray-100 transition-all duration-300 project-card" data-type="修繕" data-region="桜井市" data-year="2022">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20shrine%20gate%20torii%20with%20intricate%20wooden%20details%2C%20ancient%20architecture%20restoration%2C%20skilled%20craftsmanship%2C%20cultural%20heritage%20building%2C%20peaceful%20shrine%20grounds%2C%20professional%20photography%2C%20natural%20lighting%2C%20traditional%20construction%20techniques%2C%20sacred%20atmosphere&width=400&height=300&seq=project_shrine_2&orientation=landscape"
+alt="大神神社 鳥居修繕"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center space-x-2 mb-3">
+<span class="px-3 py-1 text-xs bg-primary/10 text-primary !rounded-full">修繕</span>
+<span class="text-gray-500 text-sm">2022年完成</span>
+</div>
+<h3 class="brush-font text-lg text-primary mb-2">大神神社 鳥居修繕</h3>
+<p class="text-gray-600 text-sm mb-3 flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+桜井市三輪
+</p>
+<p class="text-gray-600 text-sm leading-relaxed">
+日本最古の神社として知られる大神神社の大鳥居修繕工事。風雨による損傷箇所の補修と防腐処理を施し、神社の威厳ある佇まいを維持しました。伝統的な朱塗りの美しさも復元しています。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white hover:border-gray-100 transition-all duration-300 project-card" data-type="社寺建築" data-region="奈良市" data-year="2021">
+<img src="https://readdy.ai/api/search-image?query=New%20traditional%20Japanese%20temple%20construction%2C%20modern%20interpretation%20of%20classical%20architecture%2C%20clean%20wooden%20structures%2C%20contemporary%20design%20with%20traditional%20elements%2C%20professional%20architectural%20photography%2C%20natural%20materials%2C%20spiritual%20sanctuary%2C%20cultural%20building&width=400&height=300&seq=project_temple_2&orientation=landscape"
+alt="新薬師寺 講堂新築"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center space-x-2 mb-3">
+<span class="px-3 py-1 text-xs bg-primary/10 text-primary !rounded-full">社寺建築</span>
+<span class="text-gray-500 text-sm">2021年完成</span>
+</div>
+<h3 class="brush-font text-lg text-primary mb-2">新薬師寺 講堂新築</h3>
+<p class="text-gray-600 text-sm mb-3 flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+奈良市高畑町
+</p>
+<p class="text-gray-600 text-sm leading-relaxed">
+奈良時代創建の新薬師寺に新たな講堂を建立。古代の建築様式を忠実に再現しながら、現代の建築基準法にも適合させた新築工事。檜材を使用した本格的な木造建築として完成しました。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white hover:border-gray-100 transition-all duration-300 project-card" data-type="修繕" data-region="生駒市" data-year="2024">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20temple%20roof%20restoration%2C%20skilled%20craftsmen%20working%20on%20traditional%20tile%20roofing%2C%20detailed%20restoration%20work%2C%20cultural%20heritage%20preservation%2C%20professional%20craftsmanship%2C%20ancient%20building%20techniques%2C%20peaceful%20temple%20setting%2C%20natural%20materials&width=400&height=300&seq=project_roof_1&orientation=landscape"
+alt="宝山寺 本堂屋根修繕"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center space-x-2 mb-3">
+<span class="px-3 py-1 text-xs bg-primary/10 text-primary !rounded-full">修繕</span>
+<span class="text-gray-500 text-sm">2024年完成</span>
+</div>
+<h3 class="brush-font text-lg text-primary mb-2">宝山寺 本堂屋根修繕</h3>
+<p class="text-gray-600 text-sm mb-3 flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+生駒市門前町
+</p>
+<p class="text-gray-600 text-sm leading-relaxed">
+生駒山の中腹に位置する宝山寺本堂の屋根修繕工事。瓦の葺き替えと下地の補強を行い、山間部の厳しい気候条件に対応した耐久性を確保しました。伝統的な瓦屋根の美しい曲線も復元しています。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white shadow-washi !rounded-md overflow-hidden border-2 border-white hover:border-gray-100 transition-all duration-300 project-card" data-type="庭園設計" data-region="橿原市" data-year="2023">
+<img src="https://readdy.ai/api/search-image?query=Japanese%20temple%20garden%20with%20stone%20pathways%2C%20traditional%20landscaping%2C%20peaceful%20pond%20with%20koi%20fish%2C%20carefully%20pruned%20trees%2C%20moss%20covered%20stones%2C%20serene%20meditation%20space%2C%20natural%20harmony%2C%20cultural%20landscape%20design%2C%20soft%20natural%20lighting&width=400&height=300&seq=project_garden_2&orientation=landscape"
+alt="今井町 町家庭園設計"
+class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<div class="flex items-center space-x-2 mb-3">
+<span class="px-3 py-1 text-xs bg-secondary/10 text-secondary !rounded-full">庭園設計</span>
+<span class="text-gray-500 text-sm">2023年完成</span>
+</div>
+<h3 class="brush-font text-lg text-primary mb-2">今井町 町家庭園設計</h3>
+<p class="text-gray-600 text-sm mb-3 flex items-center">
+<i class="ri-map-pin-line mr-1"></i>
+橿原市今井町
+</p>
+<p class="text-gray-600 text-sm leading-relaxed">
+重要伝統的建造物群保存地区に指定される今井町の町家庭園設計。限られた空間を活かした坪庭の設計と施工を担当。季節の移ろいを感じられる植栽と、水音が心地よい小さな流れを配置しました。
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-white">
+<div class="max-w-7xl mx-auto px-6 py-12">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<div class="brush-font text-xl text-primary mb-4">清和社寺合同会社</div>
+<p class="text-gray-600 text-sm leading-relaxed mb-4">
+奈良県を拠点とする社寺建築専門の建設会社。伝統技術を現代に活かし、格調高い建築をお届けします。
+</p>
+<div class="flex space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 !rounded-full hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+<i class="ri-facebook-line text-sm"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 !rounded-full hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+<i class="ri-twitter-line text-sm"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 !rounded-full hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+<i class="ri-instagram-line text-sm"></i>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-4">サービス</h3>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">社寺建築・修繕</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">伝統工法による建築</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">庭園・造園設計</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">文化財修復</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-4">会社情報</h3>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">会社概要</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">代表挨拶</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">沿革</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">採用情報</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-4">お問い合わせ</h3>
+<div class="space-y-3 text-sm">
+<div class="flex items-center space-x-2 text-gray-600">
+<i class="ri-map-pin-line"></i>
+<span>奈良県奈良市春日野町160-1</span>
+</div>
+<div class="flex items-center space-x-2 text-gray-600">
+<i class="ri-phone-line"></i>
+<span>0742-12-3456</span>
+</div>
+<div class="flex items-center space-x-2 text-gray-600">
+<i class="ri-mail-line"></i>
+<span>info@seiwa-shaji.co.jp</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 text-center">
+<p class="text-gray-600 text-sm">
+© 2024 清和社寺合同会社. All rights reserved.
+</p>
+</div>
+</div>
+</footer>
+<script id="mobile-menu">
+document.addEventListener('DOMContentLoaded', function() {
+const menuButton = document.querySelector('.md\\:hidden button');
+const nav = document.querySelector('nav');
+if (menuButton && nav) {
+menuButton.addEventListener('click', function() {
+nav.classList.toggle('hidden');
+nav.classList.toggle('flex');
+});
+}
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const mobileNav = document.getElementById('mobile-nav');
+  const icon = menuBtn.querySelector('i');
+  let open = false;
+
+  function openMenu() {
+    mobileNav.classList.remove('hidden');
+    mobileNav.style.opacity = 0;
+    mobileNav.style.transform = 'translateY(-16px)';
+    setTimeout(() => {
+      mobileNav.style.transition = 'opacity 0.3s, transform 0.3s';
+      mobileNav.style.opacity = 1;
+      mobileNav.style.transform = 'translateY(0)';
+    }, 10);
+    icon.classList.remove('ri-menu-line');
+    icon.classList.add('ri-close-line');
+    open = true;
+  }
+  function closeMenu() {
+    mobileNav.style.opacity = 0;
+    mobileNav.style.transform = 'translateY(-16px)';
+    setTimeout(() => {
+      mobileNav.classList.add('hidden');
+      mobileNav.style.transition = '';
+      mobileNav.style.transform = '';
+    }, 300);
+    icon.classList.remove('ri-close-line');
+    icon.classList.add('ri-menu-line');
+    open = false;
+  }
+  menuBtn.addEventListener('click', function() {
+    if (!open) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+  // 画面リサイズ時にメニューをリセット
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) {
+      mobileNav.classList.add('hidden');
+      icon.classList.remove('ri-close-line');
+      icon.classList.add('ri-menu-line');
+      open = false;
+      mobileNav.style.transition = '';
+      mobileNav.style.transform = '';
+      mobileNav.style.opacity = '';
+    }
+  });
+});
+</script>
+</body>
+</html>

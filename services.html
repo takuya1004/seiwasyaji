@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サービス詳細 - 清和社寺合同会社</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#1A1A1A',
+secondary: '#223A70'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+body {
+font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro", "Hiragino Mincho ProN", "Hiragino Serif", serif;
+background: linear-gradient(45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+linear-gradient(-45deg, rgba(250,250,250,0.15) 25%, transparent 25%),
+linear-gradient(45deg, transparent 75%, rgba(250,250,250,0.15) 75%),
+linear-gradient(-45deg, transparent 75%, rgba(250,250,250,0.15) 75%);
+background-size: 20px 20px;
+background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+.washi-texture {
+position: relative;
+}
+.washi-texture::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: radial-gradient(circle at 20% 80%, rgba(120,120,120,0.1) 0%, transparent 50%),
+radial-gradient(circle at 80% 20%, rgba(120,120,120,0.1) 0%, transparent 50%),
+radial-gradient(circle at 40% 40%, rgba(120,120,120,0.05) 0%, transparent 50%);
+pointer-events: none;
+}
+.brush-font {
+font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", serif;
+font-weight: 700;
+letter-spacing: 0.1em;
+}
+.ink-border {
+border-color: #1A1A1A;
+border-width: 1px;
+}
+.shadow-washi {
+box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08), 0 1px 3px rgba(26, 26, 26, 0.1);
+}
+.tab-active {
+background-color: #1A1A1A;
+color: white;
+}
+.custom-checkbox {
+appearance: none;
+width: 1.25rem;
+height: 1.25rem;
+border: 2px solid #1A1A1A;
+border-radius: 4px;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #1A1A1A;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+left: 5px;
+top: 2px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-range {
+appearance: none;
+width: 100%;
+height: 4px;
+background: #e5e7eb;
+border-radius: 2px;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+appearance: none;
+width: 16px;
+height: 16px;
+background: #1A1A1A;
+border-radius: 50%;
+cursor: pointer;
+}
+.custom-switch {
+appearance: none;
+width: 3rem;
+height: 1.5rem;
+background: #e5e7eb;
+border-radius: 999px;
+position: relative;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+.custom-switch::after {
+content: '';
+position: absolute;
+left: 2px;
+top: 2px;
+width: 1.25rem;
+height: 1.25rem;
+background: white;
+border-radius: 50%;
+transition: transform 0.3s;
+}
+.custom-switch:checked {
+background: #1A1A1A;
+}
+.custom-switch:checked::after {
+transform: translateX(1.5rem);
+}
+</style>
+</head>
+<body class="bg-white">
+  <header class="border-b ink-border bg-gradient-to-r from-white/95 via-gray-50 to-white/90 washi-texture shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <span class="border-l-4 border-primary h-8 mr-4"></span>
+          <a href="index.html" class="brush-font text-2xl text-primary tracking-widest drop-shadow-sm">清和社寺合同会社</a>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+            ホーム
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="company.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+            会社概要
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="services.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+            サービス
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="work.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+            施工実績
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="news.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+            お知らせ
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="contact.html" class="text-primary font-semibold relative group hover:text-secondary transition-colors duration-300">
+            お問い合わせ
+            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center">
+          <i class="ri-menu-line text-primary text-2xl"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-nav" class="hidden md:hidden bg-gradient-to-r from-white/95 via-gray-50 to-white/90 washi-texture shadow-lg absolute top-full left-0 w-full border-b ink-border">
+        <nav class="flex flex-col items-center space-y-4 py-8">
+          <a href="index.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">ホーム</a>
+          <a href="company.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">会社概要</a>
+          <a href="services.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">サービス</a>
+          <a href="work.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">施工実績</a>
+          <a href="news.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">お知らせ</a>
+          <a href="contact.html" class="text-primary font-semibold hover:text-secondary transition-colors duration-300">お問い合わせ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+<main class="pt-8 pb-20">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h1 class="brush-font text-4xl text-primary mb-6">サービス詳細</h1>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+伝統と革新が調和する清和社寺の技術とサービスをご紹介いたします。
+</p>
+</div>
+<div class="mb-12">
+<div class="flex justify-center space-x-4 mb-8">
+<button class="tab-active px-6 py-3 !rounded-button whitespace-nowrap" data-tab="temple">
+社寺建築・修繕
+</button>
+<button class="bg-gray-100 px-6 py-3 !rounded-button whitespace-nowrap hover:bg-gray-200 transition-colors duration-300" data-tab="traditional">
+伝統工法による建築
+</button>
+<button class="bg-gray-100 px-6 py-3 !rounded-button whitespace-nowrap hover:bg-gray-200 transition-colors duration-300" data-tab="garden">
+庭園・造園設計
+</button>
+</div>
+<div id="temple-content" class="tab-content">
+<div class="grid lg:grid-cols-2 gap-12 items-start">
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h2 class="brush-font text-2xl text-primary mb-6">社寺建築・修繕の特徴</h2>
+<ul class="space-y-4">
+<li class="flex items-start space-x-3">
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-1">伝統技法の継承と応用</h3>
+<p class="text-gray-600">宮大工の技を現代に活かし、木組みから装飾まで本格的な社寺建築を実現します。</p>
+</div>
+</li>
+<li class="flex items-start space-x-3">
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-1">文化財としての価値保持</h3>
+<p class="text-gray-600">歴史的建造物の価値を損なうことなく、必要な修繕・補強を行います。</p>
+</div>
+</li>
+<li class="flex items-start space-x-3">
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-1">最新技術との融合</h3>
+<p class="text-gray-600">耐震性能の向上や防災対策など、現代の要求に応える技術を組み合わせます。</p>
+</div>
+</li>
+</ul>
+<div class="mt-8">
+<h3 class="brush-font text-xl text-primary mb-4">施工事例</h3>
+<div class="grid grid-cols-2 gap-4">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20temple%20restoration%20project%2C%20detailed%20wooden%20architecture%2C%20craftsmen%20working%20on%20intricate%20carvings%2C%20natural%20materials%2C%20cultural%20heritage%20preservation%2C%20professional%20photography%2C%20authentic%20craftsmanship%2C%20peaceful%20atmosphere&width=300&height=200&seq=temple_case1&orientation=landscape" alt="施工事例1" class="w-full h-32 object-cover object-top !rounded">
+<img src="https://readdy.ai/api/search-image?query=Japanese%20shrine%20renovation%20work%2C%20traditional%20roof%20tiles%2C%20wooden%20structure%20details%2C%20master%20craftsmen%2C%20cultural%20preservation%2C%20professional%20photography%2C%20authentic%20techniques%2C%20sacred%20architecture&width=300&height=200&seq=temple_case2&orientation=landscape" alt="施工事例2" class="w-full h-32 object-cover object-top !rounded">
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h3 class="brush-font text-xl text-primary mb-4">標準料金体系</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-2 border-b">
+<span class="text-primary">基本設計料</span>
+<span class="text-primary font-semibold">300,000円〜</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b">
+<span class="text-primary">実施設計料</span>
+<span class="text-primary font-semibold">500,000円〜</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b">
+<span class="text-primary">修繕工事（小規模）</span>
+<span class="text-primary font-semibold">1,000,000円〜</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-primary">新築工事</span>
+<span class="text-primary font-semibold">要相談</span>
+</div>
+<p class="text-sm text-gray-600 mt-4">
+※上記は目安となります。実際の料金は規模や内容により変動いたします。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h3 class="brush-font text-xl text-primary mb-4">対応エリア</h3>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-semibold text-primary mb-3">主要対応エリア</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+奈良県全域
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+京都府南部
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+大阪府東部
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-3">その他対応可能エリア</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+滋賀県
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+三重県
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+和歌山県
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h3 class="brush-font text-xl text-primary mb-4">工期の目安</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">基本設計</span>
+<span class="text-sm text-primary">1〜2ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 30%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">実施設計</span>
+<span class="text-sm text-primary">2〜3ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 50%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">修繕工事</span>
+<span class="text-sm text-primary">3〜6ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 70%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">新築工事</span>
+<span class="text-sm text-primary">12〜24ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="traditional-content" class="tab-content hidden">
+<div class="grid lg:grid-cols-2 gap-12 items-start">
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h2 class="brush-font text-2xl text-primary mb-6">伝統工法の特徴</h2>
+<ul class="space-y-4">
+<li class="flex items-start space-x-3">
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-1">木組みの技術</h3>
+<p class="text-gray-600">釘を使わない伝統的な継手・仕口による確かな構造体を実現します。</p>
+</div>
+</li>
+<li class="flex items-start space-x-3">
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-1">自然素材の活用</h3>
+<p class="text-gray-600">厳選された木材や漆喰など、伝統的な自然素材を使用します。</p>
+</div>
+</li>
+<li class="flex items-start space-x-3">
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-1">職人技の継承</h3>
+<p class="text-gray-600">熟練の職人による手作業で、細部まで丁寧に仕上げます。</p>
+</div>
+</li>
+</ul>
+<div class="mt-8">
+<h3 class="brush-font text-xl text-primary mb-4">施工事例</h3>
+<div class="grid grid-cols-2 gap-4">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20carpentry%20techniques%2C%20wooden%20joinery%20details%2C%20master%20craftsman%20working%2C%20natural%20materials%2C%20authentic%20methods%2C%20professional%20photography%2C%20cultural%20preservation%2C%20workshop%20atmosphere&width=300&height=200&seq=traditional_case1&orientation=landscape" alt="施工事例1" class="w-full h-32 object-cover object-top !rounded">
+<img src="https://readdy.ai/api/search-image?query=Japanese%20wooden%20architecture%2C%20traditional%20building%20methods%2C%20detailed%20craftsmanship%2C%20natural%20wood%20construction%2C%20master%20builders%2C%20professional%20photography%2C%20authentic%20techniques%2C%20cultural%20heritage&width=300&height=200&seq=traditional_case2&orientation=landscape" alt="施工事例2" class="w-full h-32 object-cover object-top !rounded">
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h3 class="brush-font text-xl text-primary mb-4">標準料金体系</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-2 border-b">
+<span class="text-primary">基本設計料</span>
+<span class="text-primary font-semibold">400,000円〜</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b">
+<span class="text-primary">実施設計料</span>
+<span class="text-primary font-semibold">600,000円〜</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b">
+<span class="text-primary">木工事（小規模）</span>
+<span class="text-primary font-semibold">2,000,000円〜</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-primary">新築工事</span>
+<span class="text-primary font-semibold">要相談</span>
+</div>
+<p class="text-sm text-gray-600 mt-4">
+※上記は目安となります。実際の料金は規模や内容により変動いたします。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h3 class="brush-font text-xl text-primary mb-4">対応エリア</h3>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-semibold text-primary mb-3">主要対応エリア</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+奈良県全域
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+京都府
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+大阪府
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-3">その他対応可能エリア</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+滋賀県
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+三重県
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+兵庫県
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h3 class="brush-font text-xl text-primary mb-4">工期の目安</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">基本設計</span>
+<span class="text-sm text-primary">2〜3ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">実施設計</span>
+<span class="text-sm text-primary">3〜4ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">木工事</span>
+<span class="text-sm text-primary">6〜12ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">新築工事</span>
+<span class="text-sm text-primary">18〜24ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="garden-content" class="tab-content hidden">
+<div class="grid lg:grid-cols-2 gap-12 items-start">
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h2 class="brush-font text-2xl text-primary mb-6">庭園・造園の特徴</h2>
+<ul class="space-y-4">
+<li class="flex items-start space-x-3">
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-1">日本庭園の伝統</h3>
+<p class="text-gray-600">枯山水や池泉回遊式など、様々な様式の日本庭園を設計・施工します。</p>
+</div>
+</li>
+<li class="flex items-start space-x-3">
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-1">自然との調和</h3>
+<p class="text-gray-600">地形や既存の植生を活かし、周辺環境と調和した庭園を創造します。</p>
+</div>
+</li>
+<li class="flex items-start space-x-3">
+<div class="w-6 h-6 flex-shrink-0 flex items-center justify-center mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-1">維持管理計画</h3>
+<p class="text-gray-600">長期的な視点で、美しい庭園を保つための管理計画を提案します。</p>
+</div>
+</li>
+</ul>
+<div class="mt-8">
+<h3 class="brush-font text-xl text-primary mb-4">施工事例</h3>
+<div class="grid grid-cols-2 gap-4">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20Japanese%20garden%20design%2C%20zen%20rock%20garden%2C%20carefully%20arranged%20stones%2C%20moss%20garden%2C%20peaceful%20atmosphere%2C%20professional%20photography%2C%20cultural%20landscaping%2C%20natural%20harmony&width=300&height=200&seq=garden_case1&orientation=landscape" alt="施工事例1" class="w-full h-32 object-cover object-top !rounded">
+<img src="https://readdy.ai/api/search-image?query=Japanese%20landscape%20design%2C%20traditional%20garden%20elements%2C%20water%20features%2C%20stone%20lanterns%2C%20peaceful%20setting%2C%20professional%20photography%2C%20cultural%20aesthetics%2C%20natural%20beauty&width=300&height=200&seq=garden_case2&orientation=landscape" alt="施工事例2" class="w-full h-32 object-cover object-top !rounded">
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h3 class="brush-font text-xl text-primary mb-4">標準料金体系</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-2 border-b">
+<span class="text-primary">基本設計料</span>
+<span class="text-primary font-semibold">200,000円〜</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b">
+<span class="text-primary">実施設計料</span>
+<span class="text-primary font-semibold">300,000円〜</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b">
+<span class="text-primary">庭園工事（小規模）</span>
+<span class="text-primary font-semibold">1,500,000円〜</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-primary">年間管理費</span>
+<span class="text-primary font-semibold">240,000円〜</span>
+</div>
+<p class="text-sm text-gray-600 mt-4">
+※上記は目安となります。実際の料金は規模や内容により変動いたします。
+</p>
+</div>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h3 class="brush-font text-xl text-primary mb-4">対応エリア</h3>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-semibold text-primary mb-3">主要対応エリア</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+奈良県全域
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+京都府
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+大阪府
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-primary mb-3">その他対応可能エリア</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+滋賀県
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+三重県
+</li>
+<li class="flex items-center">
+<i class="ri-check-line mr-2 text-primary"></i>
+和歌山県
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md">
+<h3 class="brush-font text-xl text-primary mb-4">工期の目安</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">基本設計</span>
+<span class="text-sm text-primary">2〜3週間</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 20%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">実施設計</span>
+<span class="text-sm text-primary">1〜2ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm text-primary">造園工事</span>
+<span class="text-sm text-primary">2〜4ヶ月</span>
+</div>
+<div class="h-2 bg-gray-100 !rounded-full">
+<div class="h-full bg-primary !rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16">
+<div class="washi-texture bg-white p-8 shadow-washi !rounded-md max-w-3xl mx-auto">
+<h2 class="brush-font text-2xl text-primary text-center mb-8">お問い合わせ・お見積り依頼</h2>
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-primary mb-2">お名前</label>
+<input type="text" class="w-full px-4 py-2 border !rounded focus:outline-none focus:ring-2 focus:ring-primary/20" required>
+</div>
+<div>
+<label class="block text-sm font-medium text-primary mb-2">メールアドレス</label>
+<input type="email" class="w-full px-4 py-2 border !rounded focus:outline-none focus:ring-2 focus:ring-primary/20" required>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-primary mb-2">ご希望のサービス</label>
+<select class="w-full px-4 py-2 border !rounded focus:outline-none focus:ring-2 focus:ring-primary/20">
+<option>社寺建築・修繕</option>
+<option>伝統工法による建築</option>
+<option>庭園・造園設計</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-primary mb-2">ご要望内容</label>
+<textarea class="w-full px-4 py-2 border !rounded focus:outline-none focus:ring-2 focus:ring-primary/20" rows="4" required></textarea>
+</div>
+<div class="flex justify-center">
+<button type="submit" class="bg-primary text-white px-8 py-4 !rounded-button hover:bg-secondary transition-colors duration-300">
+送信する
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white">
+<div class="max-w-7xl mx-auto px-6 py-12">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<div class="brush-font text-xl text-primary mb-4">清和社寺合同会社</div>
+<p class="text-gray-600 text-sm leading-relaxed mb-4">
+奈良県を拠点とする社寺建築専門の建設会社。伝統技術を現代に活かし、格調高い建築をお届けします。
+</p>
+<div class="flex space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 !rounded-full hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+<i class="ri-facebook-line text-sm"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 !rounded-full hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+<i class="ri-twitter-line text-sm"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 !rounded-full hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+<i class="ri-instagram-line text-sm"></i>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-4">サービス</h3>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">社寺建築・修繕</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">伝統工法による建築</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">庭園・造園設計</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">文化財修復</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-4">会社情報</h3>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">会社概要</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">代表挨拶</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">沿革</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">採用情報</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-semibold text-primary mb-4">お問い合わせ</h3>
+<div class="space-y-3 text-sm">
+<div class="flex items-center space-x-2 text-gray-600">
+<i class="ri-map-pin-line"></i>
+<span>奈良県奈良市春日野町160-1</span>
+</div>
+<div class="flex items-center space-x-2 text-gray-600">
+<i class="ri-phone-line"></i>
+<span>0742-12-3456</span>
+</div>
+<div class="flex items-center space-x-2 text-gray-600">
+<i class="ri-mail-line"></i>
+<span>info@seiwa-shaji.co.jp</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 text-center">
+<p class="text-gray-600 text-sm">
+© 2024 清和社寺合同会社. All rights reserved.
+</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const tabs = document.querySelectorAll('[data-tab]');
+const contents = document.querySelectorAll('.tab-content');
+tabs.forEach(tab => {
+tab.addEventListener('click', () => {
+tabs.forEach(t => {
+t.classList.remove('tab-active');
+t.classList.add('bg-gray-100');
+});
+tab.classList.add('tab-active');
+tab.classList.remove('bg-gray-100');
+contents.forEach(content => {
+content.classList.add('hidden');
+});
+document.getElementById(`${tab.dataset.tab}-content`).classList.remove('hidden');
+});
+});
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const mobileNav = document.getElementById('mobile-nav');
+  const icon = menuBtn.querySelector('i');
+  let open = false;
+
+  function openMenu() {
+    mobileNav.classList.remove('hidden');
+    mobileNav.style.opacity = 0;
+    mobileNav.style.transform = 'translateY(-16px)';
+    setTimeout(() => {
+      mobileNav.style.transition = 'opacity 0.3s, transform 0.3s';
+      mobileNav.style.opacity = 1;
+      mobileNav.style.transform = 'translateY(0)';
+    }, 10);
+    icon.classList.remove('ri-menu-line');
+    icon.classList.add('ri-close-line');
+    open = true;
+  }
+  function closeMenu() {
+    mobileNav.style.opacity = 0;
+    mobileNav.style.transform = 'translateY(-16px)';
+    setTimeout(() => {
+      mobileNav.classList.add('hidden');
+      mobileNav.style.transition = '';
+      mobileNav.style.transform = '';
+    }, 300);
+    icon.classList.remove('ri-close-line');
+    icon.classList.add('ri-menu-line');
+    open = false;
+  }
+  menuBtn.addEventListener('click', function() {
+    if (!open) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+  // 画面リサイズ時にメニューをリセット
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) {
+      mobileNav.classList.add('hidden');
+      icon.classList.remove('ri-close-line');
+      icon.classList.add('ri-menu-line');
+      open = false;
+      mobileNav.style.transition = '';
+      mobileNav.style.transform = '';
+      mobileNav.style.opacity = '';
+    }
+  });
+});
+</script>
+</body>
+</html>
